@@ -1,0 +1,6 @@
+"0","#| code-fold: true"
+"0","#| code-summary: ""Show the code"""
+"0",""
+"0","data <- na.omit(data)"
+"0","data$Highcaloric_food <- as.numeric(data$Highcaloric_food == ""yes"")"
+"0","data$Smoking_Habit <- as.numeric(data$Smoking_Habit == ""yes"")"

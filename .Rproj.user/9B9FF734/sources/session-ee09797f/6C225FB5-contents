@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Aditya Arava"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - projects.qmd
+      - Resume.qmd
+      - Research Question 1.qmd
+      - Research Question 2.qmd
+      - Research Question 3.qmd
+
+format:
+  html:
+    theme: pulse
+    css: styles.css
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,54 @@
+"0","library(plotly)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","data <- data.frame("
+"0","  Date = as.Date(c(""1992-04-29"", ""2021-01-06"", ""1965-08-11"", ""1967-07-23"", ""1980-05-17"","
+"0","                   ""1968-04-04"", ""1977-07-13"", ""1967-07-12"", ""1968-04-06"", ""1968-04-04"")),"
+"0","  Location = c(""Los Angeles, CA"", ""Washington, DC"", ""Los Angeles, CA"", ""Detroit, MI"", ""Miami, FL"","
+"0","               ""Washington, DC"", ""New York, NY"", ""Newark, NJ"", ""Baltimore, MD"", ""Chicago, IL""),"
+"0","  Insurance_Loss = c(1.42e9, 5e8, 3.57e8, 3.22e8, 2.04e8, 1.79e8, 1.18e8, 1.15e8, 1.04e8, 9.7e7),"
+"0","  Lat = c(34.052235, 38.89511, 34.052235, 42.331429, 25.761681,"
+"0","          38.89511, 40.712776, 40.735657, 39.290386, 41.878113),"
+"0","  Lon = c(-118.243683, -77.03637, -118.243683, -83.045753, -80.191788,"
+"0","          -77.03637, -74.005974, -74.172366, -76.61219, -87.629799)"
+"0",")"
+"0",""
+"0","data_summarized <- data %>%"
+"0","  group_by(Location, Lat, Lon) %>%"
+"0","  summarize(Total_Insurance_Loss = sum(Insurance_Loss))"
+"2","`summarise()` has grouped output by 'Location', 'Lat'. You can override using the `.groups` argument."
+"0","map_plot <- plot_ly(data_summarized, type = 'scattermapbox', mode = 'markers+text',"
+"0","                    lat = ~Lat, lon = ~Lon,"
+"0","                    text = ~paste(""Location: "", Location, ""<br>Insurance Loss: $"", "
+"0","                                  format(Total_Insurance_Loss / 1e6, digits = 10, nsmall = 2),"
+"0","                                  "" million""),"
+"0","                    hoverinfo = 'text') %>%"
+"0","  layout(title = ""Total Insurance Loss by Location (in millions) between the years 1965 to 2001"","
+"0","         mapbox = list("
+"0","           style = ""open-street-map"",  "
+"0","           zoom = 3,  "
+"0","           center = list(lat = 38, lon = -97)  "
+"0","         )) %>%"
+"0","  add_annotations("
+"0","    text = ""Time Frame"","
+"0","    x = 0.03,"
+"0","    y = 0.95,"
+"0","    xref = ""paper"","
+"0","    yref = ""paper"","
+"0","    showarrow = FALSE"
+"0","  )"
+"0",""
+"0","map_plot"

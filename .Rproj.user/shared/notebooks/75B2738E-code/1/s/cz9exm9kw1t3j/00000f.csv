@@ -1,0 +1,48 @@
+"0","library(plotly)"
+"2","Loading required package: ggplot2
+"
+"2","
+Attaching package: ‘plotly’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    layout
+
+"
+"0","data <- data.frame("
+"0","  Date = as.Date(c(""1992-04-29"", ""2021-01-06"", ""1965-08-11"", ""1967-07-23"", ""1980-05-17"","
+"0","                   ""1968-04-04"", ""1977-07-13"", ""1967-07-12"", ""1968-04-06"", ""1968-04-04"")),"
+"0","  Location = c(""Los Angeles, CA"", ""Washington, DC"", ""Los Angeles, CA"", ""Detroit, MI"", ""Miami, FL"","
+"0","               ""Washington, DC"", ""New York, NY"", ""Newark, NJ"", ""Baltimore, MD"", ""Chicago, IL""),"
+"0","  Insurance_Loss = c(1.42e9, 5e8, 3.57e8, 3.22e8, 2.04e8, 1.79e8, 1.18e8, 1.15e8, 1.04e8, 9.7e7)"
+"0",")"
+"0",""
+"0",""
+"0","data$Insurance_Loss_Millions <- data$Insurance_Loss / 1e6"
+"0",""
+"0",""
+"0","data$Insurance_Loss_Millions_Formatted <- format(data$Insurance_Loss_Millions, digits = 10, nsmall = 2)"
+"0",""
+"0",""
+"0","plot <- plot_ly(data, x = ~Date, y = ~Insurance_Loss_Millions, type = 'scatter', mode = 'lines+markers',"
+"0","                text = ~paste(""Location: "", Location, ""<br>Insurance Loss: $"", Insurance_Loss_Millions_Formatted, "" Million""),"
+"0","                hoverinfo = 'text') %>%"
+"0","  layout(title = ""Insurance Loss Over Time Period"","
+"0","         xaxis = list(title = ""Date""),"
+"0","         yaxis = list(title = ""Insurance Loss (Millions $)""),"
+"0","         plot_bgcolor = ""#f8f9fa"", "
+"0","         paper_bgcolor = ""#f8f9fa"")  "
+"0",""
+"0",""
+"0","plot"

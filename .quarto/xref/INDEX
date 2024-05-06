@@ -1,0 +1,50 @@
+{
+  "index.qmd": {
+    "index.html": "bd982374"
+  },
+  "about.qmd": {
+    "about.html": "e5e68f20"
+  },
+  "Resume.qmd": {
+    "Resume.html": "dd1346bf"
+  },
+  "projects.qmd": {
+    "projects.html": "17477380"
+  },
+  "code.qmd": {
+    "code.html": "96f105ea"
+  },
+  "docs/about.qmd": {
+    "about.html": "3ca78a0d"
+  },
+  "docs/code.qmd": {
+    "code.html": "0b38bf5c"
+  },
+  "docs/index.qmd": {
+    "index.html": "fa73c899"
+  },
+  "docs/projects.qmd": {
+    "projects.html": "65407ea2"
+  },
+  "docs/Resume.qmd": {
+    "Resume.html": "4a8d25ce"
+  },
+  "inter_final.qmd": {
+    "inter_final.html": "2d956437"
+  },
+  "code_final.qmd": {
+    "code_final.html": "30501f60"
+  },
+  "Obesity Project.qmd": {
+    "Obesity Project.html": "482e45d4"
+  },
+  "Research Question 1.qmd": {
+    "Research Question 1.html": "27b9946b"
+  },
+  "Research Question 2.qmd": {
+    "Research Question 2.html": "e4b1df90"
+  },
+  "Research Question 3.qmd": {
+    "Research Question 3.html": "f2220ad9"
+  }
+}

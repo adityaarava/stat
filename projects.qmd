@@ -1,0 +1,21 @@
+---
+title: "Projects"
+---
+
+The purpose of redesigning bad graphs is to improve clarity, accuracy, and effectiveness in conveying information. Bad graphs often suffer from issues such as cluttered visuals, misleading representations, inappropriate use of chart types, or inadequate labeling. Redesigning these graphs aims to address these shortcomings, making the data easier to interpret, enhancing communication, and ultimately leading to better-informed decision-making.
+
+Reference for the 1st Visualization:
+
+How Big is Apple? This Visualization Puts Things Into Perspective. (2019, July 3). HowMuch. https://howmuch.net/articles/putting-apple-into-perspective
+
+The chart compares the market capitalization of multiple entities. Market capitalization is the total value of a company's outstanding shares of stock. One entity (likely Apple) has the highest market capitalization and serves as the reference point for comparison. Other entities could be companies from different sectors, countries' GDPs, or other relevant categories
+
+Reasons for revamping the dataset Limited Data Points: This type of chart works well for comparing a few entities, but if you have many companies or variables, the chart can become cluttered and difficult to read. The long horizontal bars can take up a lot of space, making it hard to compare all the data points effectively.
+
+Focus on Ranking, Not Magnitude: While the chart shows the relative order of market capitalization, it doesn't directly display the actual values for each entity. This can make it difficult to judge the exact difference between companies.
+
+Limited Ability to Show Trends: This visualization is primarily for static comparisons. It's not ideal for showing trends over time or relationships between variables.
+
+Reference for the 2nd Visualization:
+
+Top 10 most expensive riots in the U.S. insurance history. (2021, April 20). HowMuch. https://howmuch.net/articles/top-10-americas-most-destructive-riots-of-all-time

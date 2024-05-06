@@ -1,0 +1,4 @@
+"0",""
+"0","# Evaluate clusters"
+"0","silhouette_score <- silhouette(kmeans_result$cluster, dist(selected_features))"
+"0",""

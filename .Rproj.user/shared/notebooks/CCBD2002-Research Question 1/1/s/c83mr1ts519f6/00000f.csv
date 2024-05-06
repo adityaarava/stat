@@ -1,0 +1,6 @@
+"0","#| code-fold: true"
+"0","#| code-summary: ""Show the code"""
+"0","set.seed(123)"
+"0","train_indices <- sample(nrow(obesity), nrow(obesity) * 0.8)"
+"0","train_data <- obesity[train_indices, ]"
+"0","test_data <- obesity[-train_indices, ]"

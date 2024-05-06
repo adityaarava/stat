@@ -1,0 +1,5 @@
+"0","for (i in 2:ncol(health_data)) {"
+"0","  if (is.numeric(health_data[, i])) {"
+"0","    boxplot(health_data[,i] ~ health_data$Obesity_Levels, main=names(health_data)[i], xlab=""Obesity Levels"", ylab=names(health_data)[i])"
+"0","  }"
+"0","}"

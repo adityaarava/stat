@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Aditya Arava - Code</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Aditya Arava</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Resume.html" rel="" target="">
+ <span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Research Question 1.html" rel="" target="">
+ <span class="menu-text">Obesity Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Research Question 2.html" rel="" target="">
+ <span class="menu-text">Research Question 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Research Question 3.html" rel="" target="">
+ <span class="menu-text">Research Question 3</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link active" data-scroll-target="#interpretation"><strong>Interpretation:</strong></a></li>
+  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1"><strong>Interpretation:</strong></a></li>
+  <li><a href="#interpretation-2" id="toc-interpretation-2" class="nav-link" data-scroll-target="#interpretation-2"><strong>Interpretation:</strong></a></li>
+  <li><a href="#interpretation-3" id="toc-interpretation-3" class="nav-link" data-scroll-target="#interpretation-3"><strong>Interpretation:</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Code</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/badvis-01.jpg" class="img-fluid"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plotly'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    last_plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    layout</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">c</span>(<span class="st">"Apple"</span>, <span class="st">"Africa's 25 GDP"</span>, <span class="st">"Netherlands GDP"</span>, <span class="st">"Google"</span>, <span class="st">"U.S. Dept. of Defence's Budget (2019)"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Coca-Cola"</span>, <span class="st">"Phone Carriers"</span>, <span class="st">"NASA's Budget since 1998"</span>, <span class="st">"NASA"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Alibaba"</span>, <span class="st">"All Cryptocurrencies"</span>, <span class="st">"Nike+Adidas"</span>, <span class="st">"Top 300 Movies"</span>, <span class="st">"Bitcoin"</span>, <span class="st">"General Motors"</span>,<span class="st">'Narcos wealth'</span>),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">886</span>, <span class="dv">839</span>, <span class="dv">831</span>, <span class="dv">751</span>, <span class="dv">686</span>, <span class="dv">678</span>, <span class="dv">559</span>, <span class="dv">451</span>, <span class="dv">450</span>, <span class="dv">416</span>, <span class="dv">233</span>, <span class="dv">182</span>, <span class="dv">138</span>, <span class="dv">138</span>, <span class="dv">51</span>,<span class="dv">44</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"orange"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"brown"</span>, <span class="st">"pink"</span>, <span class="st">"grey"</span>, <span class="st">"black"</span>, <span class="st">"yellow"</span>,<span class="st">"gold"</span>, <span class="st">"darkgreen"</span>, <span class="st">"violet"</span>, <span class="st">"darkred"</span>, <span class="st">"skyblue"</span>,<span class="st">"darkblue"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(value)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(variable, value), <span class="at">y =</span> value, <span class="at">fill =</span> variable)) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Market Capitalization of several Entities"</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Variables"</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value (in Billions)"</span>) <span class="sc">+</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-f7bc70c34fba83b7d3e7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f7bc70c34fba83b7d3e7">{"x":{"data":[{"orientation":"v","width":0.89999999999999858,"base":0,"x":[15],"y":[839],"text":"reorder(variable, value): Africa's 25 GDP<br />value: 839<br />variable: Africa's 25 GDP","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Africa's 25 GDP","legendgroup":"Africa's 25 GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[7],"y":[416],"text":"reorder(variable, value): Alibaba<br />value: 416<br />variable: Alibaba","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(230,134,19,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Alibaba","legendgroup":"Alibaba","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[6],"y":[233],"text":"reorder(variable, value): All Cryptocurrencies<br />value: 233<br />variable: All Cryptocurrencies","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(205,150,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"All Cryptocurrencies","legendgroup":"All Cryptocurrencies","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[16],"y":[886],"text":"reorder(variable, value): Apple<br />value: 886<br />variable: Apple","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(171,163,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Apple","legendgroup":"Apple","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[138],"text":"reorder(variable, value): Bitcoin<br />value: 138<br />variable: Bitcoin","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Bitcoin","legendgroup":"Bitcoin","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[11],"y":[678],"text":"reorder(variable, value): Coca-Cola<br />value: 678<br />variable: Coca-Cola","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(12,183,2,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Coca-Cola","legendgroup":"Coca-Cola","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[51],"text":"reorder(variable, value): General Motors<br />value:  51<br />variable: General Motors","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,190,103,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"General Motors","legendgroup":"General Motors","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[13],"y":[751],"text":"reorder(variable, value): Google<br />value: 751<br />variable: Google","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,193,154,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Google","legendgroup":"Google","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[44],"text":"reorder(variable, value): Narcos wealth<br />value:  44<br />variable: Narcos wealth","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Narcos wealth","legendgroup":"Narcos wealth","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999947,"base":0,"x":[8],"y":[450],"text":"reorder(variable, value): NASA<br />value: 450<br />variable: NASA","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,184,231,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"NASA","legendgroup":"NASA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[9],"y":[451],"text":"reorder(variable, value): NASA's Budget since 1998<br />value: 451<br />variable: NASA's Budget since 1998","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,169,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"NASA's Budget since 1998","legendgroup":"NASA's Budget since 1998","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[14],"y":[831],"text":"reorder(variable, value): Netherlands GDP<br />value: 831<br />variable: Netherlands GDP","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(132,148,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Netherlands GDP","legendgroup":"Netherlands GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[5],"y":[182],"text":"reorder(variable, value): Nike+Adidas<br />value: 182<br />variable: Nike+Adidas","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Nike+Adidas","legendgroup":"Nike+Adidas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[10],"y":[559],"text":"reorder(variable, value): Phone Carriers<br />value: 559<br />variable: Phone Carriers","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(237,104,237,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Phone Carriers","legendgroup":"Phone Carriers","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[4],"y":[138],"text":"reorder(variable, value): Top 300 Movies<br />value: 138<br />variable: Top 300 Movies","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,97,204,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Top 300 Movies","legendgroup":"Top 300 Movies","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[12],"y":[686],"text":"reorder(variable, value): U.S. Dept. of Defence's Budget (2019)<br />value: 686<br />variable: U.S. Dept. of Defence's Budget (2019)","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,104,161,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"U.S. Dept. of Defence's Budget (2019)","legendgroup":"U.S. Dept. of Defence's Budget (2019)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":142.26287434633551,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Market Capitalization of several Entities","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,16.600000000000001],"tickmode":"array","ticktext":["Narcos wealth","General Motors","Bitcoin","Top 300 Movies","Nike+Adidas","All Cryptocurrencies","Alibaba","NASA","NASA's Budget since 1998","Phone Carriers","Coca-Cola","U.S. Dept. of Defence's Budget (2019)","Google","Netherlands GDP","Africa's 25 GDP","Apple"],"tickvals":[1,2,3.0000000000000004,4,5,6,7,8,9,10,11,12,13,14,15,16],"categoryorder":"array","categoryarray":["Narcos wealth","General Motors","Bitcoin","Top 300 Movies","Nike+Adidas","All Cryptocurrencies","Alibaba","NASA","NASA's Budget since 1998","Phone Carriers","Coca-Cola","U.S. Dept. of Defence's Budget (2019)","Google","Netherlands GDP","Africa's 25 GDP","Apple"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Variables","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-44.300000000000004,930.29999999999995],"tickmode":"array","ticktext":["0","250","500","750"],"tickvals":[0,250,499.99999999999994,750],"categoryorder":"array","categoryarray":["0","250","500","750"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Value (in Billions)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"variable","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"215066c81e25":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"215066c81e25","visdat":{"215066c81e25":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation"><strong>Interpretation:</strong></h2>
+<p>The bar chart compares the market capitalization of various entities against a reference point, likely Apple, which has the highest market capitalization. Here’s a breakdown of the interpretation:</p>
+<p>Reference Point: Apple likely has the highest market capitalization among the entities compared in the chart, serving as the reference point for comparison. Its market capitalization is represented by the tallest bar on the chart. Entities Compared: Other entities in the chart represent a diverse range of categories, such as companies from different sectors, countries’ GDPs, or other relevant categories. These entities are ranked based on their market capitalization values, with the lowest being the “Narcos wealth” at 44 billion USD. Comparison with Apple: Alibaba: The market capitalization of Alibaba is mentioned to be nearly half of Apple’s. This indicates that while Alibaba is a significant entity, its market capitalization is substantially lower compared to Apple. Other Entities: The chart allows for the comparison of market capitalizations of various entities relative to Apple. Entities with higher market capitalizations will have taller bars, while those with lower market capitalizations will have shorter bars. Insights from the Chart: The chart provides insights into the relative market capitalizations of different entities compared to Apple. It highlights the dominance of Apple in terms of market capitalization compared to other entities. It also showcases the wide range of market capitalizations across different entities, reflecting the diversity of the global economy. Overall, the chart effectively visualizes the market capitalizations of multiple entities, with Apple as the reference point for comparison, providing valuable insights into the relative sizes of different entities&nbsp;in&nbsp;the&nbsp;market.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">c</span>(<span class="st">"Apple"</span>, <span class="st">"Africa's 25 GDP"</span>, <span class="st">"Netherlands GDP"</span>, <span class="st">"Google"</span>, <span class="st">"U.S. Dept. of Defence's Budget (2019)"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Coca-Cola"</span>, <span class="st">"Phone Carriers"</span>, <span class="st">"NASA's Budget since 1998"</span>, <span class="st">"NASA"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Alibaba"</span>, <span class="st">"All Cryptocurrencies"</span>, <span class="st">"Nike+Adidas"</span>, <span class="st">"Top 300 Movies"</span>, <span class="st">"Bitcoin"</span>, <span class="st">"General Motors"</span>,<span class="st">'Narcos wealth'</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">886</span>, <span class="dv">839</span>, <span class="dv">831</span>, <span class="dv">751</span>, <span class="dv">686</span>, <span class="dv">678</span>, <span class="dv">559</span>, <span class="dv">451</span>, <span class="dv">450</span>, <span class="dv">416</span>, <span class="dv">233</span>, <span class="dv">182</span>, <span class="dv">138</span>, <span class="dv">138</span>, <span class="dv">51</span>,<span class="dv">44</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"orange"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"brown"</span>, <span class="st">"pink"</span>, <span class="st">"grey"</span>, <span class="st">"black"</span>, <span class="st">"yellow"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"gold"</span>, <span class="st">"darkgreen"</span>, <span class="st">"violet"</span>, <span class="st">"darkred"</span>, <span class="st">"skyblue"</span>,<span class="st">"darkblue"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[<span class="fu">order</span>(data<span class="sc">$</span>value), ]</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(data, </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">type =</span> <span class="st">'scatterpolar'</span>, </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">theta =</span> data<span class="sc">$</span>variable, </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">r =</span> data<span class="sc">$</span>value,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">'toself'</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">line =</span> <span class="fu">list</span>(<span class="at">color =</span> data<span class="sc">$</span>color),</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">color =</span> data<span class="sc">$</span>color)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Market Capitalization of several sectors against apple"</span>, </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x =</span> <span class="fl">0.5</span>,  </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="fl">0.95</span>,  </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">xanchor =</span> <span class="st">"center"</span>, </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>                      <span class="at">yanchor =</span> <span class="st">"top"</span>),  </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">polar =</span> <span class="fu">list</span>(<span class="at">radialaxis =</span> <span class="fu">list</span>(<span class="at">visible =</span> <span class="cn">TRUE</span>, <span class="at">title =</span> <span class="st">'Value (in Billions)'</span>)),</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">margin =</span> <span class="fu">list</span>(<span class="at">t =</span> <span class="dv">100</span>))  </span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>No scatterpolar mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -&gt; https://plotly.com/r/reference/#scatter-mode</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>A line object has been specified, but lines is not in the mode
+Adding lines to the mode...</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-3a5327f4356631780ed4" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3a5327f4356631780ed4">{"x":{"visdat":{"2150506c5e77":["function () ","plotlyVisDat"]},"cur_data":"2150506c5e77","attrs":{"2150506c5e77":{"theta":["Narcos wealth","General Motors","Top 300 Movies","Bitcoin","Nike+Adidas","All Cryptocurrencies","Alibaba","NASA","NASA's Budget since 1998","Phone Carriers","Coca-Cola","U.S. Dept. of Defence's Budget (2019)","Google","Netherlands GDP","Africa's 25 GDP","Apple"],"r":[44,51,138,138,182,233,416,450,451,559,678,686,751,831,839,886],"fill":"toself","line":{"color":["darkblue","skyblue","violet","darkred","darkgreen","gold","yellow","black","grey","pink","brown","purple","blue","green","orange","red"]},"marker":{"color":["darkblue","skyblue","violet","darkred","darkgreen","gold","yellow","black","grey","pink","brown","purple","blue","green","orange","red"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatterpolar"}},"layout":{"margin":{"b":40,"l":60,"t":100,"r":10},"title":{"text":"Market Capitalization of several sectors against apple","x":0.5,"y":0.94999999999999996,"xanchor":"center","yanchor":"top"},"polar":{"radialaxis":{"visible":true,"title":"Value (in Billions)"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","theta":["Narcos wealth","General Motors","Top 300 Movies","Bitcoin","Nike+Adidas","All Cryptocurrencies","Alibaba","NASA","NASA's Budget since 1998","Phone Carriers","Coca-Cola","U.S. Dept. of Defence's Budget (2019)","Google","Netherlands GDP","Africa's 25 GDP","Apple"],"r":[44,51,138,138,182,233,416,450,451,559,678,686,751,831,839,886],"fill":"toself","line":{"color":["darkblue","skyblue","violet","darkred","darkgreen","gold","yellow","black","grey","pink","brown","purple","blue","green","orange","red"]},"marker":{"color":["darkblue","skyblue","violet","darkred","darkgreen","gold","yellow","black","grey","pink","brown","purple","blue","green","orange","red"],"line":{"color":"rgba(31,119,180,1)"}},"type":"scatterpolar","mode":"markers+lines","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretation-1" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-1"><strong>Interpretation:</strong></h2>
+<p>The radar chart compares the market capitalization of various entities against a reference point, likely Apple, which has the highest market capitalization. Here’s a breakdown of the interpretation:</p>
+<p>Reference Point: Apple likely has the highest market capitalization among the entities compared in the chart, serving as the reference point for comparison. Its market capitalization is represented by the tallest bar on the chart. Entities Compared: Other entities in the chart represent a diverse range of categories, such as companies from different sectors, countries’ GDPs, or other relevant categories. These entities are ranked based on their market capitalization values, with the lowest being the “Narcos wealth” at 44 billion USD. Comparison with Apple: Alibaba: The market capitalization of Alibaba is mentioned to be nearly half of Apple’s. This indicates that while Alibaba is a significant entity, its market capitalization is substantially lower compared to Apple. Other Entities: The chart allows for the comparison of market capitalizations of various entities relative to Apple. Entities with higher market capitalizations will have taller bars, while those with lower market capitalizations will have shorter bars. Insights from the Chart: The chart provides insights into the relative market capitalizations of different entities compared to Apple. It highlights the dominance of Apple in terms of market capitalization compared to other entities. It also showcases the wide range of market capitalizations across different entities, reflecting the diversity of the global economy. Overall, the chart effectively visualizes the market capitalizations of multiple entities, with Apple as the reference point for comparison, providing valuable insights into the relative sizes of different entities&nbsp;in&nbsp;the&nbsp;market.</p>
+<p><img src="images/impr2.png" class="img-fluid"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Date =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1992-04-29"</span>, <span class="st">"2021-01-06"</span>, <span class="st">"1965-08-11"</span>, <span class="st">"1967-07-23"</span>, <span class="st">"1980-05-17"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"1968-04-04"</span>, <span class="st">"1977-07-13"</span>, <span class="st">"1967-07-12"</span>, <span class="st">"1968-04-06"</span>, <span class="st">"1968-04-04"</span>)),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Location =</span> <span class="fu">c</span>(<span class="st">"Los Angeles, CA"</span>, <span class="st">"Washington, DC"</span>, <span class="st">"Los Angeles, CA"</span>, <span class="st">"Detroit, MI"</span>, <span class="st">"Miami, FL"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Washington, DC"</span>, <span class="st">"New York, NY"</span>, <span class="st">"Newark, NJ"</span>, <span class="st">"Baltimore, MD"</span>, <span class="st">"Chicago, IL"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Insurance_Loss =</span> <span class="fu">c</span>(<span class="fl">1.42e9</span>, <span class="fl">5e8</span>, <span class="fl">3.57e8</span>, <span class="fl">3.22e8</span>, <span class="fl">2.04e8</span>, <span class="fl">1.79e8</span>, <span class="fl">1.18e8</span>, <span class="fl">1.15e8</span>, <span class="fl">1.04e8</span>, <span class="fl">9.7e7</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Insurance_Loss_Millions <span class="ot">&lt;-</span> data<span class="sc">$</span>Insurance_Loss <span class="sc">/</span> <span class="fl">1e6</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Insurance_Loss_Millions_Formatted <span class="ot">&lt;-</span> <span class="fu">format</span>(data<span class="sc">$</span>Insurance_Loss_Millions, <span class="at">digits =</span> <span class="dv">10</span>, <span class="at">nsmall =</span> <span class="dv">2</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(data, <span class="at">x =</span> <span class="sc">~</span>Date, <span class="at">y =</span> <span class="sc">~</span>Insurance_Loss_Millions, <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'lines+markers'</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Location: "</span>, Location, <span class="st">"&lt;br&gt;Insurance Loss: $"</span>, Insurance_Loss_Millions_Formatted, <span class="st">" Million"</span>),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">hoverinfo =</span> <span class="st">'text'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Insurance Loss Over Time Period"</span>,</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Date"</span>),</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Insurance Loss (Millions $)"</span>),</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot_bgcolor =</span> <span class="st">"#f8f9fa"</span>, </span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">paper_bgcolor =</span> <span class="st">"#f8f9fa"</span>)  </span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-9bae0560414472b9479e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9bae0560414472b9479e">{"x":{"visdat":{"21507e5b468b":["function () ","plotlyVisDat"]},"cur_data":"21507e5b468b","attrs":{"21507e5b468b":{"x":{},"y":{},"mode":"lines+markers","text":{},"hoverinfo":"text","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Insurance Loss Over Time Period","xaxis":{"domain":[0,1],"automargin":true,"title":"Date"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Insurance Loss (Millions $)"},"plot_bgcolor":"#f8f9fa","paper_bgcolor":"#f8f9fa","hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["1992-04-29","2021-01-06","1965-08-11","1967-07-23","1980-05-17","1968-04-04","1977-07-13","1967-07-12","1968-04-06","1968-04-04"],"y":[1420,500,357,322,204,179,118,115,104,97],"mode":"lines+markers","text":["Location:  Los Angeles, CA <br>Insurance Loss: $ 1420.00  Million","Location:  Washington, DC <br>Insurance Loss: $  500.00  Million","Location:  Los Angeles, CA <br>Insurance Loss: $  357.00  Million","Location:  Detroit, MI <br>Insurance Loss: $  322.00  Million","Location:  Miami, FL <br>Insurance Loss: $  204.00  Million","Location:  Washington, DC <br>Insurance Loss: $  179.00  Million","Location:  New York, NY <br>Insurance Loss: $  118.00  Million","Location:  Newark, NJ <br>Insurance Loss: $  115.00  Million","Location:  Baltimore, MD <br>Insurance Loss: $  104.00  Million","Location:  Chicago, IL <br>Insurance Loss: $   97.00  Million"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text"],"type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretation-2" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-2"><strong>Interpretation:</strong></h2>
+<p>An individual insurance loss incident is represented by each point in the interactive visualization, which shows the pattern of insurance losses across time. Each event’s date is represented by the x-coordinate, and the loss amount expressed in millions of dollars is shown by the y-coordinate respectively. Through the in-depth review of the data, hovering over individual points provides further information like the precise location and amount of the insurance loss. Through the process of plot analysis, interested parties can recognize trends, pinpoint important incidents, and understand the extent and kind of losses. This understanding supports the development of insurance policies, resource allocation, and risk assessment—all of which are crucial risk management methods. All things considered, the visual aid is a useful means of concluding past insurance loss data that can be applied to help stakeholders create better plans for risk management and reaction to unforeseen circumstances.</p>
+<pre><code></code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Date =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"1992-04-29"</span>, <span class="st">"2021-01-06"</span>, <span class="st">"1965-08-11"</span>, <span class="st">"1967-07-23"</span>, <span class="st">"1980-05-17"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"1968-04-04"</span>, <span class="st">"1977-07-13"</span>, <span class="st">"1967-07-12"</span>, <span class="st">"1968-04-06"</span>, <span class="st">"1968-04-04"</span>)),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Location =</span> <span class="fu">c</span>(<span class="st">"Los Angeles, CA"</span>, <span class="st">"Washington, DC"</span>, <span class="st">"Los Angeles, CA"</span>, <span class="st">"Detroit, MI"</span>, <span class="st">"Miami, FL"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Washington, DC"</span>, <span class="st">"New York, NY"</span>, <span class="st">"Newark, NJ"</span>, <span class="st">"Baltimore, MD"</span>, <span class="st">"Chicago, IL"</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Insurance_Loss =</span> <span class="fu">c</span>(<span class="fl">1.42e9</span>, <span class="fl">5e8</span>, <span class="fl">3.57e8</span>, <span class="fl">3.22e8</span>, <span class="fl">2.04e8</span>, <span class="fl">1.79e8</span>, <span class="fl">1.18e8</span>, <span class="fl">1.15e8</span>, <span class="fl">1.04e8</span>, <span class="fl">9.7e7</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lat =</span> <span class="fu">c</span>(<span class="fl">34.052235</span>, <span class="fl">38.89511</span>, <span class="fl">34.052235</span>, <span class="fl">42.331429</span>, <span class="fl">25.761681</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>          <span class="fl">38.89511</span>, <span class="fl">40.712776</span>, <span class="fl">40.735657</span>, <span class="fl">39.290386</span>, <span class="fl">41.878113</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lon =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">118.243683</span>, <span class="sc">-</span><span class="fl">77.03637</span>, <span class="sc">-</span><span class="fl">118.243683</span>, <span class="sc">-</span><span class="fl">83.045753</span>, <span class="sc">-</span><span class="fl">80.191788</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>          <span class="sc">-</span><span class="fl">77.03637</span>, <span class="sc">-</span><span class="fl">74.005974</span>, <span class="sc">-</span><span class="fl">74.172366</span>, <span class="sc">-</span><span class="fl">76.61219</span>, <span class="sc">-</span><span class="fl">87.629799</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>data_summarized <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Location, Lat, Lon) <span class="sc">%&gt;%</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Total_Insurance_Loss =</span> <span class="fu">sum</span>(Insurance_Loss))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Location', 'Lat'. You can override using
+the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>map_plot <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(data_summarized, <span class="at">type =</span> <span class="st">'scattermapbox'</span>, <span class="at">mode =</span> <span class="st">'markers+text'</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lat =</span> <span class="sc">~</span>Lat, <span class="at">lon =</span> <span class="sc">~</span>Lon,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Location: "</span>, Location, <span class="st">"&lt;br&gt;Insurance Loss: $"</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">format</span>(Total_Insurance_Loss <span class="sc">/</span> <span class="fl">1e6</span>, <span class="at">digits =</span> <span class="dv">10</span>, <span class="at">nsmall =</span> <span class="dv">2</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">" million"</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">hoverinfo =</span> <span class="st">'text'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Total Insurance Loss by Location (in millions) between the years 1965 to 2001"</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapbox =</span> <span class="fu">list</span>(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">style =</span> <span class="st">"open-street-map"</span>,  </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">zoom =</span> <span class="dv">3</span>,  </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">center =</span> <span class="fu">list</span>(<span class="at">lat =</span> <span class="dv">38</span>, <span class="at">lon =</span> <span class="sc">-</span><span class="dv">97</span>)  </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>         )) <span class="sc">%&gt;%</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_annotations</span>(</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="st">"Time Frame"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fl">0.03</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fl">0.95</span>,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xref =</span> <span class="st">"paper"</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">yref =</span> <span class="st">"paper"</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">showarrow =</span> <span class="cn">FALSE</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>map_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-bff676ec11415a7df8fe" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-bff676ec11415a7df8fe">{"x":{"visdat":{"21506c01266a":["function () ","plotlyVisDat"]},"cur_data":"21506c01266a","attrs":{"21506c01266a":{"mode":"markers+text","lat":{},"lon":{},"text":{},"hoverinfo":"text","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scattermapbox"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Total Insurance Loss by Location (in millions) between the years 1965 to 2001","mapbox":{"style":"open-street-map","zoom":3,"center":{"lat":38,"lon":-97}},"annotations":[{"text":"Time Frame","x":0.029999999999999999,"y":0.94999999999999996,"xref":"paper","yref":"paper","showarrow":false}],"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"mode":"markers+text","lat":[39.290385999999998,41.878112999999999,42.331429,34.052235000000003,25.761680999999999,40.712775999999998,40.735657000000003,38.895110000000003],"lon":[-76.612189999999998,-87.629799000000006,-83.045753000000005,-118.243683,-80.191788000000003,-74.005973999999995,-74.172365999999997,-77.036370000000005],"text":["Location:  Baltimore, MD <br>Insurance Loss: $  104.00  million","Location:  Chicago, IL <br>Insurance Loss: $   97.00  million","Location:  Detroit, MI <br>Insurance Loss: $  322.00  million","Location:  Los Angeles, CA <br>Insurance Loss: $ 1777.00  million","Location:  Miami, FL <br>Insurance Loss: $  204.00  million","Location:  New York, NY <br>Insurance Loss: $  118.00  million","Location:  Newark, NJ <br>Insurance Loss: $  115.00  million","Location:  Washington, DC <br>Insurance Loss: $  679.00  million"],"hoverinfo":["text","text","text","text","text","text","text","text"],"type":"scattermapbox","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretation-3" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-3"><strong>Interpretation:</strong></h2>
+<p>Data on insurance losses from 1965 to 2001 is presented in an informative manner in the following visualization. It displays marks on a map, each of which denotes an insurance loss location. At a given place, the size of each marker represents the overall insurance loss; larger markers denote higher losses. When viewers hover over a marker, important details like the name of the site and the overall insurance loss in millions of dollars are revealed, enabling them to comprehend the size and spatial distribution of losses in various areas. Viewers can find trends indicating recurrent incidents or locations prone to particular sorts of disasters by analyzing the map and identifying geographic areas with higher insurance losses.Users can zoom in, pan around the map, and acquire a deeper understanding of the spatial patterns and temporal trends of insurance losses with this interactive visualization that facilitates dynamic exploration. In the end, the visualization aids in risk assessment, strategic planning to lessen the impact of future insurance catastrophes, and informed decision-making for stakeholders in the insurance business, risk management, and disaster preparedness.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,4 @@
+"0","#| code-fold: true"
+"0","#| code-summary: ""Show the code"""
+"0","lm_model <- lm(Weight ~ Highcaloric_food + Vegetable_intake + Smoking_Habit + Technology_dependency, data = data)"
+"0",""

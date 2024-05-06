@@ -1,0 +1,4 @@
+"0","#| code-fold: true"
+"0","#| code-summary: ""Show the code"""
+"0","model <- rpart(family_history_with_overweight ~ ., data = train_data)"
+"0","rpart.plot(model)"

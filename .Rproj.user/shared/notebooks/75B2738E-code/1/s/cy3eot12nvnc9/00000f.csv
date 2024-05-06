@@ -1,0 +1,44 @@
+"0",""
+"0","library(plotly)"
+"0",""
+"0","data <- data.frame("
+"0","  variable = c(""Apple"", ""Africa's 25 GDP"", ""Netherlands GDP"", ""Google"", ""U.S. Dept. of Defence's Budget (2019)"","
+"0","               ""Coca-Cola"", ""Phone Carriers"", ""NASA's Budget since 1998"", ""NASA"","
+"0","               ""Alibaba"", ""All Cryptocurrencies"", ""Nike+Adidas"", ""Top 300 Movies"", ""Bitcoin"", ""General Motors"",'Narcos wealth'),"
+"0","  value = c(886, 839, 831, 751, 686, 678, 559, 451, 450, 416, 233, 182, 138, 138, 51,44),"
+"0","  color = c(""red"", ""orange"", ""green"", ""blue"", ""purple"", ""brown"", ""pink"", ""grey"", ""black"", ""yellow"","
+"0","            ""gold"", ""darkgreen"", ""violet"", ""darkred"", ""skyblue"",""darkblue"")"
+"0",")"
+"0",""
+"0","data <- data[order(data$value), ]"
+"0",""
+"0","p <- plot_ly(data, "
+"0","             type = 'scatterpolar', "
+"0","             theta = data$variable, "
+"0","             r = data$value,"
+"0","             fill = 'toself',"
+"0","             line = list(color = data$color),"
+"0","             marker = list(color = data$color)) %>%"
+"0","  layout(title = list(text = ""Market Capitalization of several sectors against apple"", "
+"0","                      x = 0.5,  "
+"0","                      y = 0.95,  "
+"0","                      xanchor = ""center"", "
+"0","                      yanchor = ""top""),  "
+"0","         polar = list(radialaxis = list(visible = TRUE, title = 'Value (in Billions)')),"
+"0","         margin = list(t = 100))  "
+"0",""
+"0","p"
+"2","No scatterpolar mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"
+"2","A line object has been specified, but lines is not in the mode
+Adding lines to the mode...
+"
+"2","No scatterpolar mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"
+"2","A line object has been specified, but lines is not in the mode
+Adding lines to the mode...
+"

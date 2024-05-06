@@ -1,0 +1,14 @@
+{
+  "hash": "9d4026239a4c64ae2b1e121877c8d179",
+  "result": {
+    "markdown": "---\ntitle: \"Aditya Arava\"\nimage: dp.jpg\ntoc: false\nabout:\n  template: trestles\n  image-shape: round\n  image-width: 16em\n  links:\n    - text: Email\n      href: mailto:sarava@gmu.edu\n    - text: LinkedIn\n      href: https://www.linkedin.com/in/aditya-arava-8b4a13190/\n    - text: GitHub\n      href: https://github.com/adityaarava\nformat: html\neditor: visual\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

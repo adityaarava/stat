@@ -1,0 +1,27 @@
+---
+title: "Aditya Arava"
+image: dp.jpg
+toc: false
+about:
+  template: trestles
+  image-shape: round
+  image-width: 13em
+  links:
+    - text: Email
+      href: mailto:sarava@gmu.edu
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/aditya-arava-8b4a13190/
+    - text: GitHub
+      href: https://github.com/adityaarava
+format: html
+editor: visual
+---
+
+My name is Satya Jyothiraditya Arava and you can call me Aditya. I am currently pursuing my Masters in Data Analytics Engineering from George Mason University. I completed my graduation degree in Computer Science Engineering from Amrita School of Engineering,Bengaluru.
+
+During my term as a program analyst trainee I had the opportunity to get my hands on various technologies like Angular,React,Spring Boot,SQL and GCP.I am now mapping out my academic objectives, with which I can graduate from Mason with immense knowledge, so that I can boom in data analysis and its related technologies.To achieve my goals and aspirations I am enrolling in some interesting courses,including one on statistics with a concentration in R programming and another on data management and mining.
+
+I am looking forward to explore more technologies during my masters tenure.
+
+```         
+```

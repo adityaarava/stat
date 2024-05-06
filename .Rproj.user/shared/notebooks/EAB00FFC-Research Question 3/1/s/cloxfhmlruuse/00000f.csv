@@ -1,0 +1,8 @@
+"0","#| code-fold: true"
+"0","#| code-summary: ""Show the code"""
+"0","# Load necessary libraries"
+"0","library(ggplot2)"
+"0","library(corrplot)"
+"0",""
+"0","# Read the data"
+"0","health_data <- read.csv(""C:\\Users\\arava\\OneDrive\\Desktop\\STAT515\\modified_obesity_data.csv"")"
